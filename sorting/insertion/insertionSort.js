@@ -1,3 +1,6 @@
+// better performance than selection sorting algorithm.
+// builds the final sorted array one item at a time.
+
 function ArrayList() {
   
   const array = [];

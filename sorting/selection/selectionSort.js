@@ -1,3 +1,5 @@
+// better performance than the bubble sorting algorithm.
+// in-place comparison sort algorithm.
 
 const swap = function(array, index1, index2) {
 
