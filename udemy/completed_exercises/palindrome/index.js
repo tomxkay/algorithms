@@ -9,13 +9,17 @@
 
 function palindrome(str) {
   return str.split('').every((char, i) => {
-    return char === str[str.length - i - 1]; // take into account that array index starts at zero.
+    return char === str[str.length - i - 1];
   });
 }
 
+module.exports = palindrome;
 
 // function palindrome(str) {
-//   return str.split('').reverse().join('') === str;
+//   const reversed = str
+//     .split('')
+//     .reverse()
+//     .join('');
+//
+//   return str === reversed;
 // }
-
-module.exports = palindrome;
