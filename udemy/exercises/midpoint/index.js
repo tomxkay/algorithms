@@ -12,6 +12,22 @@
 //   l.insertLast('c')
 //   midpoint(l); // returns { data: 'b' }
 
-function midpoint(list) {}
+function midpoint(list) {
+  let slow = list.head;
+  let fast = list.head;
+
+  // a algorithm to find the midpoint of a list without knowledge of the size of the list initially.
+  while (fast.next && fast.next.next) {
+    slow = slow.next;
+    fast = fast.next.next;
+  }
+
+  // as soon as the condition for the while loop is false, 
+  // slow should be pointing to our definition of a midpoint.
+  return slow;
+
+
+
+}
 
 module.exports = midpoint;

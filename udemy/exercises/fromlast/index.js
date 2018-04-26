@@ -11,6 +11,25 @@
 //    list.insertLast('d');
 //    fromLast(list, 2).data // 'b'
 
-function fromLast(list, n) {}
+function fromLast(list, n) {
+
+  let slow = list.getFirst();
+  let fast = list.getFirst();
+
+  // advance fast n nodes from slow
+  for (let i = 0; i < n; i++) {
+    fast = fast.next;
+  }
+
+  // then increment slow and fast by one node in a while loop
+  // when fast.next is null (when fast is the last pointing at the last node)
+  // break out of while loop and return slow;
+  while(fast.next) {
+    slow = slow.next;
+    fast = fast.next;
+  }
+
+  return slow;
+}
 
 module.exports = fromLast;
