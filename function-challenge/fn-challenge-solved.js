@@ -380,7 +380,7 @@ function gensymf(prefix) {
   };
 }
 
-function gensymff(unary, seed) {
+function gensymf(unary, seed) {
   return function(prexif) {
     var number = seed;
     return function() {

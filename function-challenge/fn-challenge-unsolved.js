@@ -249,3 +249,236 @@ function filter(gen, predicate) {
 function concat(gen1, gen2) {
 
 }
+
+
+// make a function gensymf that makes a
+// function that generates unique symbols
+/*
+  var geng = gensymf("G"),
+  genh = gensymf("H");
+
+  geng(); // 'G1'
+  genh(); // 'H1'
+  geng(); // 'G2'
+  genh(); // 'H2'
+*/
+function gensymf(prefix) {
+
+}
+
+// make a function fibonaccif that when
+// passed two previous fibonacci sequence
+// returns a generator that will
+// return the next fibonacci number.
+/*
+  var fib = fibonaccif(0, 1);
+
+  fib(); // 0
+  fib(); // 1
+  fib(); // 1
+  fib(); // 2
+  fib(); // 3
+  fib(); // 5
+*/
+function fibonaccif(a, b) {
+
+}
+
+
+/////////////////////////////////////////////////////////
+///   From here onwards, incorporate functional       ///
+///   and object oriented programming if applicable   ///
+/////////////////////////////////////////////////////////
+
+// write a counter function that returns an object containing
+// two functions that implement an up/down counter,
+// hiding the counter.
+/*
+  var object = counter(10),
+  up = object.up,
+  down = object.down;
+
+  up(); // 11
+  down(); // 10
+  down(); // 9
+  up(); // 10
+*/
+function counter(n) {
+
+}
+
+// make a revocable function that takes a binary function,
+// and returns an object containing an invoke function
+// that can invoke the binary function, and a revoke
+// function that disables the invoke function.
+/*
+  var rev = revocable(add),
+  add_rev = rev.invoke;
+  add_rev(3, 4); // 7
+  rev.revoke();
+  add_rev(5, 7); // undefined
+*/
+function revocable(binary) {
+
+}
+
+// write a function m that takes a value
+// and an optional source string and
+// returns them in an object.
+/*
+  JSON.stringify(m(1)); // {"value": 1, "source": "1"}
+  JSON.stringify(m(Math.PI, "pi")); // {"value": 3.14159..., "source": "pi"}
+*/
+function m(value, sorce) {
+
+}
+
+// write a function addm that takes two m objects and
+// returns an m object.
+/*
+  JSON.stringify(addm(m(3), m(4))); // {"value": 7, "source": "(3+4)"}
+  JSON.stringify(addm(m(1), m(Math.PI, "pi"))); // {"value": 4.114159..., "source": "(1+pi)"}
+*/
+function addm(a, b) {
+
+}
+
+// write a function liftm that takes
+// a binary function and a string
+// and returns a function that acts on m objects.
+/*
+  var addm = liftm(add, "+");
+  JSON.stringify(addm(m(3), m(4))); // {"value": 7, "source": "(3+4)"}
+  JSON.stringify(liftm(mul, "*")(m(3), m(4))); // {"value": 12, "source": "(3*4)"}
+*/
+function liftm(binary, op) {
+
+}
+
+// modify function liftm so that
+// the functions it produces can accept
+// arguments that are either numbers or m objects.
+/*
+  var addm = liftm(add, "+");
+  JSON.stringify(addm(3, 4)); // {"value": 7, "source": "(3+4)"}
+*/
+function liftm(binary, op) {
+
+}
+
+// write a function exp that
+// evaluates simple array expressions.
+/*
+  var sae = [mul, 5, 11];
+  exp(sae); // 55
+  exp(42); // 42
+*/
+function exp(value) {
+
+}
+
+// modify exp to evaluate nested array expressions.
+/*
+  var nae = [Math.sqrt, [add, [square, 3], [square, 4]]];
+  exp(nae); // 5
+*/
+function exp(value) {
+
+}
+
+// write a function addg that adds from many invocations, 
+// untils it sees an empty invocation
+/*
+  addg(); // undefined
+  addg(2)(); // 2
+  addg(2)(7)(); // 9
+  addg(3)(0)(4)(); // 7
+  addg(1)(2)(4)(8)(); // 15
+*/
+function addg(first) {
+
+}
+
+// write a function liftg that will
+// take a binary funciton and apply it
+// to many invocations.
+/*
+  liftg(mul)(); // undefined;
+  liftg(mul)(3)(); // 3
+  liftg(mul)(3)(0)(4)(); // 0
+  liftg(mul)(1)(2)(4)(8)(); // 64
+*/
+function liftg(binary) {
+
+}
+
+// write a function arrayg that will build an array
+// from many invocations.
+/*
+  arrayg(); // []
+  arrayg(3)(); // [3]
+  arrayg(3)(4)(5)(); // ][3, 4, 5]
+*/
+function arrayg(first) {
+
+}
+
+// make a function continuize that takes
+// a unary function, and returns a function
+// that takes a callback and an argument.
+/*
+  sqrtc = continuize(Math.sqrt);
+  sqrtc(console.log, 81); // 9
+*/
+function continuize(any) {
+
+}
+
+
+
+
+
+/*
+
+Below are a few "hard" to (correctly) implement functions due 
+to security exploitation nuances of JS
+
+  |
+  |
+  |
+  v
+
+*/
+
+
+// make an array wrapper object with methods get, store, and append,
+// such that an attacker cannot access to the private array.
+/*
+  myvector = vector();
+  myvector.append(7);
+  myvector.store(1, 8);
+  myvector.get(0); // 7
+  myvector.get(1); // 8
+*/
+function vector() {
+
+}
+
+// make a function that makes a publish/subscribe object.
+// it will reliably deliver all publications to 
+// all subscribers in the right order.
+/*
+  my_pubsub = pubsub();
+  my_pubsub.subscribe(console.log);
+  my_pubsub.subscribe(function(s) {
+    console.log(s.toUpperCase());
+  });
+  my_pubsub.publish('It works!'); // console.log('It works!')
+*/
+function pubsub() {
+
+}
+
+
+
+
